@@ -51,6 +51,8 @@ get_data_types(df2)
 # 2. compare the values for meta data between the data frames
 
 def dtype_comparison(source, target):
+    print("Comparing Data Types")
+    print(70*"#")
     df1 = source.dtypes
     df2 = target.dtypes
     if (df1 == df2).all():
@@ -79,13 +81,13 @@ def column_count(dataframe):
 
 
 def column_comparison(source, target):
-#    df1 = source.count()
-#    df2 = target.count()
     if (source.columns.values == target.columns.values).all ():
-        print("Dataframe columns MATCH")
+        print("Dataframe columns MATCH \n")
     else:
-        print("Dataframe columns DON'T MATCH")
-    print("Comparing all columns in 2 data sets \n")
+        print("Dataframe columns DON'T MATCH\n")
+    print(70*"#")
+    print("Comparing Column names in 2 data sets \n")
+    print(70*"#")
     print("Source: ", column_count(source), " columns \n")
     print(source.columns.values)
     print("Target: ", column_count(target), " columns \n")
@@ -95,7 +97,7 @@ def column_comparison(source, target):
 #    print(pd.concat([df1,df2]).drop_duplicates(keep=False))
     return (source.columns.values == target.columns.values).all()
 
-print (column_comparison(df1,df2))
+#print (column_comparison(df1,df2))
 
 #### COLUMN SUMS ########################################
 # scope
@@ -151,12 +153,16 @@ def remove_columns(columns_list,x):
 # easy way, but hard to debug
 
 def compare_sums_in_numeric_df(df1, df2):
+    print("Comparing SUMS of all NUMERIC Columns")
+    print(70*"#")
     list1 = df1[get_numeric_columns_list(df1)].sum()
     list2 = df2[get_numeric_columns_list(df2)].sum()
+    print("Source: \n", list1, " columns \n")
+    print("Target: \n", list2, " columns \n")
     if (list1 == list2).all ():
-        print("Dataframe columns MATCH")
+        print("Dataframe columns MATCH \n")
     else:
-        print("Dataframe columns DON'T MATCH")
+        print("Dataframe columns DON'T MATCH \n")
     print("\n NUMERIC COLUMN Sums Comparison:")
     print(list1.compare(list2), "\n")
     print("The list of differences is: \n")
@@ -187,11 +193,11 @@ def compare_specific_sums_in_any_df(source_df, target_df, col1,col2):
     df2 = pd.DataFrame(target_df[col2])
     list1 = df1.sum()
     list2 = df2.sum()
-    print ("Comparing SPECIFIC column sums in 2 data sets \n")
-    print ("Source columns: ", col1)
-    print (list1, "\n")
-    print ("Target columns: ", col2)
-    print (list2, "\n")
+    print("Comparing SPECIFIC column sums in 2 data sets \n")
+    print("Source columns: ", col1)
+    print(list1, "\n")
+    print("Target columns: ", col2)
+    print(list2, "\n")
     if (list1 == list2).all ():
         print ("Dataframe columns MATCH")
     else:
