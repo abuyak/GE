@@ -46,3 +46,5 @@ great_expectations checkpoint new getting_started_checkpoint
 9. pip install pytest
 
 10. pip install pyclean
+
+11. pip install pytest-html

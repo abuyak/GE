@@ -9,9 +9,5 @@ targetfile = csv_to_df(target_path)
 
 ### PANDAS CHECKS #####
 
-print(column_comparison(sourcefile, targetfile))
-print(dtype_comparison(sourcefile, targetfile))
-print(compare_numeric_sums(sourcefile, targetfile))
-#print(sourcefile.info)
-#print(sourcefile.sum(numeric_only=True))
-#print(cleanfile.sum())
+
+compare_specific_sums_in_any_df(sourcefile,targetfile,"vendor_id", "vendor_id")

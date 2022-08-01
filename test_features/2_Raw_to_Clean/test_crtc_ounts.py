@@ -3,8 +3,8 @@ from functions import *
 ## ARRANGE ##
 ## Connect to Data Lake
 
-source_path = "D:\\PycharmProjects\\GE\\data\\raw_yellow_tripdata_sample_2019-01.csv"
-target_path = "D:\\PycharmProjects\\GE\\data\\clean_yellow_tripdata_sample_2019-01.csv"
+source_path = "data/raw_yellow_tripdata_sample_2019-01.csv"
+target_path = "data/clean_yellow_tripdata_sample_2019-01.csv"
 
 # ACT
 ## Put data into the dataframes for comparison
