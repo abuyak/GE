@@ -1,3 +1,8 @@
+Download python from https://www.python.org/downloads/
+Download python, saved to c:\temp
+Open an admin PowerShell prompt
+Run the command C:\temp\python-3.10.6-amd64.exe
+
 1. Download Git for windows from:
 https://git-scm.com/download/win
 
@@ -19,8 +24,15 @@ Modifying PATH on Windows 10:
     Close and re-open your console (or restart IDE)
 
 
+if you don't need great_expctations - skip to step 8
+========================================================================================
+
 4. Setup great expectations from here
 https://docs.greatexpectations.io/docs/tutorials/getting_started/tutorial_setup
+
+
+pip install great_expectations
+
 
 5. Create new data source. When creating data source chose Pandas and set the path to the data as "data"
 great_expectations datasource new
@@ -40,6 +52,8 @@ great_expectations suite new
 
 7. Setup a checkpoint
 great_expectations checkpoint new getting_started_checkpoint
+
+========================================================================================
 
 8. pip install pandas-profiling[notebook]
 

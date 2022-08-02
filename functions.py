@@ -1,21 +1,25 @@
 import pandas as pd
 import json
+import yaml
 
-source_path = "data/source_yellow_tripdata_sample_2019-01.csv"
-target_path = "data/raw_yellow_tripdata_sample_2019-01.csv"
+#source_path = "data/source_yellow_tripdata_sample_2019-01.csv"
+#target_path = "data/raw_yellow_tripdata_sample_2019-01.csv"
 
+
+##################### 0. Access the Data ###########################################################################################
+####################################################################################################################################
 
 def read_json(file_path):
     with open(file_path, "r") as f:
         return json.load(f)
 
 
-# def read_yaml(file_path):
-#    with open(file_path, "r") as f:
-#        return yaml.safe_load(f)
+def read_yaml(file_path):
+    with open(sys.path[0], file_path, "r") as f:
+        return yaml.safe_load(f)
 
-##################### 0. Access the Data #########################
-##################################################################
+#yaml.safe_load(open(os.path.join(sys.path[0],"settings.yaml")))
+
 # 1 define the dataset
 
 def csv_to_df(source_path):
@@ -23,8 +27,8 @@ def csv_to_df(source_path):
     df = pd.DataFrame(source_path)
     return df
 
-df1 = csv_to_df(source_path)
-df2 = csv_to_df(target_path)
+#df1 = csv_to_df(source_path)
+#df2 = csv_to_df(target_path)
 
 
 ###################### 1. Meta Data Test Logic ##########################
@@ -44,8 +48,8 @@ def get_data_types(df1):
 #    print(df)
     return df
 
-get_data_types(df1)
-get_data_types(df2)
+#get_data_types(df1)
+#get_data_types(df2)
 
 
 # 2. compare the values for meta data between the data frames
@@ -61,11 +65,11 @@ def dtype_comparison(source, target):
         print("Dataframes Data Types DON'T MATCH")
     print("\n Data Type Differences:")
     print(df1.compare(df2))
-#    print("The list of differences is: \n")
-#    print(pd.concat([df1,df2]).drop_duplicates(keep=False))
+    print("The list of differences is: \n")
+    print(pd.concat([df1,df2]).drop_duplicates(keep=False))
     return (df1 == df2).all()
 
-print(dtype_comparison(df1,df2))
+#print(dtype_comparison(df1,df2))
 
 
 ###################### 2. Columns Test Logic ############################
@@ -113,7 +117,7 @@ def column_comparison(source, target):
 # https://sparkbyexamples.com/pandas/pandas-get-column-names/
 
 def get_numeric_columns_list(df):
-    numeric_columns = df1._get_numeric_data().columns.values.tolist()
+    numeric_columns = df._get_numeric_data().columns.values.tolist()
     return numeric_columns
 
 # 3 identify the sums for each numeric column in the data set
