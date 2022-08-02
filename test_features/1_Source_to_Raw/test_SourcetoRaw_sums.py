@@ -29,7 +29,9 @@ def test_compare_sums_in_numeric_df():
 def test_compare_all_column_sums():
     assert compare_sums_in_any_df(df1, df2) == True
 
-@pytest.mark.parametrize("df1_cols, df2_cols",[('vendor_id', 'vendor_id')])
+@pytest.mark.parametrize("df1_cols, df2_cols",
+                         [('vendor_id', 'vendor_id'),
+                          ('passenger_count', 'passenger_count')])
 def test_compare_specific_column_sums(df1_cols, df2_cols):
     assert compare_specific_sums_in_any_df(df1, df2, df1_cols, df2_cols) == True
 
