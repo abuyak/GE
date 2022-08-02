@@ -1,11 +1,16 @@
 from functions import *
-import imp
+import yaml
+
 
 # ARRANGE ##
 # Connect to Data Lake
 
-source_path = "data/source_yellow_tripdata_sample_2019-01.csv"
-target_path = "data/raw_yellow_tripdata_sample_2019-01.csv"
+config = yaml.safe_load(open("test_features/1_Source_to_Raw/settings.yaml"))
+source_path = config['SOURCE']['PATH']
+target_path = config['TARGET']['PATH']
+
+#source_path = "data/source_yellow_tripdata_sample_2019-01.csv"
+#target_path = "data/raw_yellow_tripdata_sample_2019-01.csv"
 
 # ACT
 # Put data into the dataframes for comparison

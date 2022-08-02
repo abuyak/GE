@@ -48,3 +48,5 @@ great_expectations checkpoint new getting_started_checkpoint
 10. pip install pyclean
 
 11. pip install pytest-html
+
+12. pip install pyyaml
