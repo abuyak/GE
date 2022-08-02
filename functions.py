@@ -85,6 +85,10 @@ def column_comparison(source, target):
         print("Dataframe columns MATCH \n")
     else:
         print("Dataframe columns DON'T MATCH\n")
+        list1=pd.DataFrame(source.columns)
+        list2=pd.DataFrame(target.columns)
+        print ("The list of differences is: \n")
+        print (pd.concat ([list1, list2]).drop_duplicates (keep=False))
     print(70*"#")
     print("Comparing Column names in 2 data sets \n")
     print(70*"#")
@@ -92,9 +96,6 @@ def column_comparison(source, target):
     print(source.columns.values)
     print("Target: ", column_count(target), " columns \n")
     print(target.columns.values)
-#    print("\n Result")
-#    print("The list of differences is: \n")
-#    print(pd.concat([df1,df2]).drop_duplicates(keep=False))
     return (source.columns.values == target.columns.values).all()
 
 #print (column_comparison(df1,df2))

@@ -1,10 +1,11 @@
 from functions import *
 import yaml
+import os, sys
 
-## ARRANGE ##
+# ARRANGE
 ## Connect to Data Lake
 
-config = yaml.safe_load(open("test_features/2_Raw_to_Clean/settings.yaml"))
+config = yaml.safe_load(open(os.path.join(sys.path[0],"settings.yaml")))
 source_path = config['SOURCE']['PATH']
 target_path = config['TARGET']['PATH']
 
@@ -19,6 +20,7 @@ df2 = csv_to_df(target_path)
 
 # ASSERT
 # Run the tests
+
 
 def test_column_count():
     assert column_comparison(df1,df2) == True

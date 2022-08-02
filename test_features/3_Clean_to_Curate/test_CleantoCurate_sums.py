@@ -1,11 +1,12 @@
 from functions import *
 import pytest
 import yaml
+import os, sys
 
 # ARRANGE
 ## Connect to Data Lake
 
-config = yaml.safe_load(open("test_features/3_Clean_to_Curate/settings.yaml"))
+config = yaml.safe_load(open(os.path.join(sys.path[0],"settings.yaml")))
 source_path = config['SOURCE']['PATH']
 target_path = config['TARGET']['PATH']
 
