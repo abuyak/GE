@@ -1,6 +1,7 @@
 import pandas as pd
 import json
 import yaml
+import os, sys
 
 #source_path = "data/source_yellow_tripdata_sample_2019-01.csv"
 #target_path = "data/raw_yellow_tripdata_sample_2019-01.csv"
@@ -14,11 +15,13 @@ def read_json(file_path):
         return json.load(f)
 
 
-def read_yaml(file_path):
-    with open(sys.path[0], file_path, "r") as f:
-        return yaml.safe_load(f)
+#def read_yaml(config_path, file_path):
+#    with open(config_path, file_path, "r") as f:
+#        return yaml.safe_load(f)
 
-#yaml.safe_load(open(os.path.join(sys.path[0],"settings.yaml")))
+def read_yaml(config_path, file_path):
+    f = open(os.path.join(config_path, file_path))
+    return yaml.safe_load(f)
 
 # 1 define the dataset
 
