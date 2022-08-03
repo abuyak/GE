@@ -39,21 +39,21 @@ def return_df(config_file):
     return df
 
 
-
-#df1 = csv_to_df(source_path)
-#df2 = csv_to_df(target_path)
-
 def print_differences(source, target):
     print("The list of differences is: \n")
     print(pd.concat([source,target]).drop_duplicates(keep=False))
+    print (source.compare (target))
+    
 
 
 def print_source_and_target(source, target):
     print("Comparing Data")
     print(70*"#")
-    print("Source: \n")
+    print("Source: ", "\n")
     print(source)
-    print("Target: \n")
+    print("\n")
+    print(70*"#")
+    print("Target: ", "\n")
     print(target)
     print("\n")
     print(70*"#")
@@ -88,12 +88,13 @@ def dtype_comparison(source, target):
     df1 = source.dtypes
     df2 = target.dtypes
     if (df1 == df2).all():
-        print("Dataframe Data Types MATCH")
+        print("Dataframe Data Types MATCH \n")
     else:
-        print("Dataframes Data Types DON'T MATCH")
+        print("Dataframes Data Types DON'T MATCH \n")
+    print_source_and_target(df1, df2)
     print("\n Data Type Differences:")
     print(df1.compare(df2))
-    print_differences(df1, df2)
+    print_differences(pd.DataFrame(df1), pd.DataFrame(df2))
     return (df1 == df2).all()
 
 #print(dtype_comparison(df1,df2))
@@ -209,20 +210,20 @@ def remove_columns(columns_list,x):
 # easy way, but hard to debug
 
 def compare_sums_in_numeric_df(df1, df2):
-    print("Comparing SUMS of all NUMERIC Columns")
-    print(70*"#")
+
     list1 = df1[get_numeric_columns_list(df1)].sum()
     list2 = df2[get_numeric_columns_list(df2)].sum()
-    print("Source: \n", list1, " columns \n")
-    print("Target: \n", list2, " columns \n")
+
     if (list1 == list2).all ():
         print("Dataframe columns MATCH \n")
     else:
         print("Dataframe columns DON'T MATCH \n")
-    print("\n NUMERIC COLUMN Sums Comparison:")
+    print("Comparing SUMS of all NUMERIC Columns")
+    print(70*"#")
+    print("Source: \n", list1, " columns \n")
+    print("Target: \n", list2, " columns \n")
     print(list1.compare(list2), "\n")
-    print("The list of differences is: \n")
-    print(pd.concat([df1,df2]).drop_duplicates(keep=False))
+    print_differences(df1,df2)
     return (list1 == list2).all()
 
 #print(compare_sums_in_numeric_df(df1, df2))
@@ -237,10 +238,10 @@ def compare_sums_in_any_df(df1, df2):
         print ("Dataframe columns MATCH")
     else:
         print ("Dataframe columns DON'T MATCH")
-    print ("\n NUMERIC COLUMN Sums Comparison:")
-    print (list1.compare (list2))
-    print ("The list of differences is: \n")
-    print (pd.concat([df1, df2]).drop_duplicates (keep=False))
+    print_differences(list1,list2)
+ #   print (list1.compare (list2))
+ #   print ("The list of differences is: \n")
+ #   print (pd.concat([df1, df2]).drop_duplicates (keep=False))
     return (list1 == list2).all()
 
 def compare_specific_sums_in_any_df(source_df, target_df, col1,col2):
