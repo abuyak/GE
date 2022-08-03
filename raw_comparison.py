@@ -2,14 +2,13 @@ from functions import *
 import pandas as pd
 import yaml
 
-source_path = "data/clean_yellow_tripdata_sample_2019-01.csv"
-target_path = "data/curate_yellow_tripdata_sample_2019-01.csv"
+config = read_yaml(sys.path[0], "settings.yaml")
+df1 = csv_to_df (config['SOURCE']['PATH'])
+df2 = csv_to_df (config['TARGET']['PATH'])
 
-sourcefile = csv_to_df(source_path)
-targetfile = csv_to_df(target_path)
 
-### PANDAS CHECKS #####
+list1 = df1.count()
+list2 = df2.count()
 
-config = yaml.safe_load(open("test_features/1_Source_to_Raw/settings.yaml"))
-source = config['SOURCE']['PATH']
-print(source)
+
+return_df(config['SOURCE'])

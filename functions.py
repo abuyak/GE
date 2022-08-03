@@ -15,10 +15,6 @@ def read_json(file_path):
         return json.load(f)
 
 
-#def read_yaml(config_path, file_path):
-#    with open(config_path, file_path, "r") as f:
-#        return yaml.safe_load(f)
-
 def read_yaml(config_path, file_path):
     f = open(os.path.join(config_path, file_path))
     return yaml.safe_load(f)
@@ -30,12 +26,38 @@ def csv_to_df(source_path):
     df = pd.DataFrame(source_path)
     return df
 
+def parquet_to_df(source_path):
+    df = pd.read_parquet(source_path)
+    return df
+
+def return_df(config_file):
+    if config_file['FORMAT'] == "csv":
+        source_path = pd.read_csv(config_file['PATH'])
+        df = pd.DataFrame(source_path)
+    elif config_file['FORMAT'] == "parquet":
+        df = pd.read_parquet(config_file['PATH'])
+    return df
+
+
+
 #df1 = csv_to_df(source_path)
 #df2 = csv_to_df(target_path)
 
 def print_differences(source, target):
     print("The list of differences is: \n")
     print(pd.concat([source,target]).drop_duplicates(keep=False))
+
+
+def print_source_and_target(source, target):
+    print("Comparing Data")
+    print(70*"#")
+    print("Source: \n")
+    print(source)
+    print("Target: \n")
+    print(target)
+    print("\n")
+    print(70*"#")
+   
 
 ###################### 1. Meta Data Test Logic ##########################
 #########################################################################
@@ -95,6 +117,7 @@ def column_count(dataframe):
 
 # 2. Compare them between the dataframes
 def column_name_comparison(source, target):
+    print_source_and_target(source.columns.values, target.columns.values)
     if (source.columns.values == target.columns.values).all ():
         print("Dataframe columns MATCH \n")
     else:
@@ -102,26 +125,37 @@ def column_name_comparison(source, target):
         list1=pd.DataFrame(source.columns)
         list2=pd.DataFrame(target.columns)
         print_differences(list1, list2)
-
-    print(70*"#")
-    print("Comparing Column names in 2 data sets \n")
-    print(70*"#")
-    print("Source: ", column_count(source), " columns \n")
-    print(source.columns.values)
-    print("Target: ", column_count(target), " columns \n")
-    print(target.columns.values)
     return (source.columns.values == target.columns.values).all()
 
 
 # 3. Compare counts for each column
+def compare_record_count_columns(df1, df2):
+    list1 = df1.count()
+    list2 = df2.count()
+    if (list1==list2).all():
+        print("Dataframe column value counts MATCH \n")
+    else:
+        print("Dataframe column value counts DON'T MATCH\n")
+    print_source_and_target(list1,list2)
+    print_differences(list1, list2)
+    return (list1 == list2).all()
 
 
+# 4. Compare counts for each row
+def compare_record_count_rows(df1, df2):
+    list1 = df1.count(axis=1)
+    list2 = df2.count(axis=1)
+    if (list1==list2).all():
+        print("Dataframe row value counts MATCH \n")
+    else:
+        print("Dataframe row value counts DON'T MATCH\n")
+    print_source_and_target(list1,list2)
+    print_differences(list1, list2)
+    return (list1 == list2).all()
 
 
-
-
-
-#### COLUMN SUMS ########################################
+################## SUMS Test Logic ################################################################################
+###################################################################################################################
 # scope
 
 # 1 define the dataset (already defined above)
