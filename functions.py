@@ -33,6 +33,9 @@ def csv_to_df(source_path):
 #df1 = csv_to_df(source_path)
 #df2 = csv_to_df(target_path)
 
+def print_differences(source, target):
+    print("The list of differences is: \n")
+    print(pd.concat([source,target]).drop_duplicates(keep=False))
 
 ###################### 1. Meta Data Test Logic ##########################
 #########################################################################
@@ -68,34 +71,38 @@ def dtype_comparison(source, target):
         print("Dataframes Data Types DON'T MATCH")
     print("\n Data Type Differences:")
     print(df1.compare(df2))
-    print("The list of differences is: \n")
-    print(pd.concat([df1,df2]).drop_duplicates(keep=False))
+    print_differences(df1, df2)
     return (df1 == df2).all()
 
 #print(dtype_comparison(df1,df2))
 
 
-###################### 2. Columns Test Logic ############################
-#########################################################################
+###################### 2. Counts Test Logic ####################################################
+#################################################################################################
 
 # scope
 # 1. Get the list of columns from each data set
 # 2. Compare them between the dataframes
+# 3. Compare counts for each column
+# 4. Compare counts for each row
+# 5. Compare null values in each column
 
+
+# 1. Get the list of columns from each data set
 def column_count(dataframe):
     columns = len(dataframe.count())
     return columns
 
-
-def column_comparison(source, target):
+# 2. Compare them between the dataframes
+def column_name_comparison(source, target):
     if (source.columns.values == target.columns.values).all ():
         print("Dataframe columns MATCH \n")
     else:
         print("Dataframe columns DON'T MATCH\n")
         list1=pd.DataFrame(source.columns)
         list2=pd.DataFrame(target.columns)
-        print ("The list of differences is: \n")
-        print (pd.concat ([list1, list2]).drop_duplicates (keep=False))
+        print_differences(list1, list2)
+
     print(70*"#")
     print("Comparing Column names in 2 data sets \n")
     print(70*"#")
@@ -105,7 +112,14 @@ def column_comparison(source, target):
     print(target.columns.values)
     return (source.columns.values == target.columns.values).all()
 
-#print (column_comparison(df1,df2))
+
+# 3. Compare counts for each column
+
+
+
+
+
+
 
 #### COLUMN SUMS ########################################
 # scope

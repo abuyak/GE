@@ -24,6 +24,6 @@ df2 = csv_to_df(target_path)
 
 
 def test_column_count():
-    assert column_comparison(df1,df2) == True
+    assert column_name_comparison (df1, df2) == True
 
 
