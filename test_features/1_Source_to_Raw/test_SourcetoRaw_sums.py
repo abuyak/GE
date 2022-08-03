@@ -6,7 +6,8 @@ import os, sys
 # ARRANGE
 ## Connect to Data Lake
 
-config = yaml.safe_load(open(os.path.join(sys.path[0],"settings.yaml")))
+#config = yaml.safe_load(open(os.path.join(sys.path[0],"settings.yaml")))
+config = read_yaml(sys.path[0], "settings.yaml")
 source_path = config['SOURCE']['PATH']
 target_path = config['TARGET']['PATH']
 
