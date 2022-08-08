@@ -242,8 +242,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
     notFoundMessage.hidden = !allRowsHidden;
 }
 </script>
-    <h1>report.html</h1>
-    <p>Report generated on 04-Aug-2022 at 15:34:15 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <h1>reprort.html</h1>
+    <p>Report generated on 08-Aug-2022 at 11:38:43 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -259,8 +259,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.10.6</td></tr></table>
     <h2>Summary</h2>
-    <p>22 tests ran in 8.04 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">16 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">6 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>22 tests ran in 2.74 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">20 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">2 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -274,198 +274,12 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="failed results-table-row">
         <tr>
           <td class="col-result">Failed</td>
-          <td class="col-name">test_features/1_Source_to_Raw/test_SourcetoRaw_dtypes.py::test_dtypes</td>
-          <td class="col-duration">0.11</td>
+          <td class="col-name">test_features/2. Clean/test_RawtoClean_sums.py::test_compare_all_column_sums</td>
+          <td class="col-duration">0.22</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">def test_dtypes():<br/>&gt;       assert dtype_comparison(df1, df2) == True<br/><span class="error">E       assert False == True</span><br/><span class="error">E        +  where False = dtype_comparison(      vendor_id      pickup_datetime  ... total_amount  congestion_surcharge\n0             1   2019-01-15 3:36:12  ......            NaN\n9999          2  2019-01-26 17:48:59  ...        11.80                   0.0\n\n[10000 rows x 18 columns],       vendor_id      pickup_datetime  ... total_amount  congestion_surcharge\n0             1   2019-01-15 3:36:12  ......            NaN\n9999          2  2019-01-26 17:48:59  ...        11.80                   0.0\n\n[10000 rows x 18 columns])</span><br/><br/>test_features\1_Source_to_Raw\test_SourcetoRaw_dtypes.py:21: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/>Comparing Data Types
-######################################################################
-Dataframes Data Types DON&#x27;T MATCH 
-
-Comparing Data
-######################################################################
-Source:  
-
-vendor_id                  int64
-pickup_datetime           object
-dropoff_datetime          object
-passenger_count          float64
-trip_distance            float64
-rate_code_id               int64
-store_and_fwd_flag        object
-pickup_location_id         int64
-dropoff_location_id        int64
-payment_type               int64
-fare_amount              float64
-extra                    float64
-mta_tax                  float64
-tip_amount               float64
-tolls_amount             float64
-improvement_surcharge    float64
-total_amount             float64
-congestion_surcharge     float64
-dtype: object
-
-
-######################################################################
-Target:  
-
-vendor_id                  int64
-pickup_datetime           object
-dropoff_datetime          object
-passenger_count            int64
-trip_distance            float64
-rate_code_id               int64
-store_and_fwd_flag        object
-pickup_location_id         int64
-dropoff_location_id        int64
-payment_type               int64
-fare_amount              float64
-extra                    float64
-mta_tax                  float64
-tip_amount               float64
-tolls_amount             float64
-improvement_surcharge    float64
-total_amount             float64
-congestion_surcharge     float64
-dtype: object
-
-
-######################################################################
-
- Data Type Differences:
-                    self  other
-passenger_count  float64  int64
-The list of differences is: 
-
-Empty DataFrame
-Columns: [0]
-Index: []
-                       0       
-                    self  other
-passenger_count  float64  int64
-<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">test_features/1_Source_to_Raw/test_SourcetoRaw_sums.py::test_compare_sums_in_numeric_df</td>
-          <td class="col-duration">0.26</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">def test_compare_sums_in_numeric_df():<br/>&gt;       assert compare_sums_in_numeric_df(df1, df2) == True<br/><span class="error">E       assert False == True</span><br/><span class="error">E        +  where False = compare_sums_in_numeric_df(      vendor_id      pickup_datetime  ... total_amount  congestion_surcharge\n0             1   2019-01-15 3:36:12  ......            NaN\n9999          2  2019-01-26 17:48:59  ...        11.80                   0.0\n\n[10000 rows x 18 columns],       vendor_id      pickup_datetime  ... total_amount  congestion_surcharge\n0             1   2019-01-15 3:36:12  ......            NaN\n9999          2  2019-01-26 17:48:59  ...        11.80                   0.0\n\n[10000 rows x 18 columns])</span><br/><br/>test_features\1_Source_to_Raw\test_SourcetoRaw_sums.py:22: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/>Dataframe columns DON&#x27;T MATCH 
-
-Comparing SUMS of all NUMERIC Columns
-######################################################################
-Source: 
- vendor_id                  16438.00
-passenger_count            15715.10
-trip_distance              27589.91
-rate_code_id               10623.00
-pickup_location_id       1665286.00
-dropoff_location_id      1635225.00
-payment_type               12930.00
-fare_amount               124850.31
-extra                       3255.09
-mta_tax                     5011.01
-tip_amount                 18139.03
-tolls_amount                2932.42
-improvement_surcharge       2994.90
-total_amount              157242.31
-congestion_surcharge           0.00
-dtype: float64  columns 
-
-Target: 
- vendor_id                  16438.00
-passenger_count            15716.00
-trip_distance              27589.91
-rate_code_id               10623.00
-pickup_location_id       1665286.00
-dropoff_location_id      1635225.00
-payment_type               12930.00
-fare_amount               124850.31
-extra                       3255.09
-mta_tax                     5011.01
-tip_amount                 18139.03
-tolls_amount                2932.42
-improvement_surcharge       2994.90
-total_amount              157242.31
-congestion_surcharge           0.00
-dtype: float64  columns 
-
-                    self    other
-passenger_count  15715.1  15716.0 
-
-The list of differences is: 
-
-   vendor_id     pickup_datetime  ... total_amount  congestion_surcharge
-0          1  2019-01-15 3:36:12  ...         9.75                   NaN
-0          1  2019-01-15 3:36:12  ...         9.75                   NaN
-
-[2 rows x 18 columns]
-  passenger_count      
-             self other
-0             0.1   1.0
-<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">test_features/1_Source_to_Raw/test_SourcetoRaw_sums.py::test_compare_all_column_sums</td>
-          <td class="col-duration">0.32</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">def test_compare_all_column_sums():<br/>&gt;       assert compare_sums_in_any_df(df1, df2) == True<br/><span class="error">E       assert False == True</span><br/><span class="error">E        +  where False = compare_sums_in_any_df(      vendor_id      pickup_datetime  ... total_amount  congestion_surcharge\n0             1   2019-01-15 3:36:12  ......            NaN\n9999          2  2019-01-26 17:48:59  ...        11.80                   0.0\n\n[10000 rows x 18 columns],       vendor_id      pickup_datetime  ... total_amount  congestion_surcharge\n0             1   2019-01-15 3:36:12  ......            NaN\n9999          2  2019-01-26 17:48:59  ...        11.80                   0.0\n\n[10000 rows x 18 columns])</span><br/><br/>test_features\1_Source_to_Raw\test_SourcetoRaw_sums.py:25: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/>
- EVERY COLUMN Sums Comparison:
-Dataframe columns DON&#x27;T MATCH
-The list of differences is: 
-
-passenger_count    15715.1
-passenger_count      15716
-dtype: object
-                    self  other
-passenger_count  15715.1  15716
-<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">test_features/1_Source_to_Raw/test_SourcetoRaw_sums.py::test_compare_specific_column_sums[passenger_count-passenger_count]</td>
-          <td class="col-duration">0.11</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">df1_cols = &#x27;passenger_count&#x27;, df2_cols = &#x27;passenger_count&#x27;<br/><br/>    @pytest.mark.parametrize(&quot;df1_cols, df2_cols&quot;,<br/>                             [(&#x27;vendor_id&#x27;, &#x27;vendor_id&#x27;),<br/>                              (&#x27;passenger_count&#x27;, &#x27;passenger_count&#x27;)])<br/>    def test_compare_specific_column_sums(df1_cols, df2_cols):<br/>&gt;       assert compare_specific_sums_in_any_df(df1, df2, df1_cols, df2_cols) == True<br/><span class="error">E       AssertionError: assert False == True</span><br/><span class="error">E        +  where False = compare_specific_sums_in_any_df(      vendor_id      pickup_datetime  ... total_amount  congestion_surcharge\n0             1   2019-01-15 3:36:12  ......            NaN\n9999          2  2019-01-26 17:48:59  ...        11.80                   0.0\n\n[10000 rows x 18 columns],       vendor_id      pickup_datetime  ... total_amount  congestion_surcharge\n0             1   2019-01-15 3:36:12  ......            NaN\n9999          2  2019-01-26 17:48:59  ...        11.80                   0.0\n\n[10000 rows x 18 columns], &#x27;passenger_count&#x27;, &#x27;passenger_count&#x27;)</span><br/><br/>test_features\1_Source_to_Raw\test_SourcetoRaw_sums.py:31: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/>
- SPECIFIC COLUMN Sums Comparison:
-Comparing SPECIFIC column sums in 2 data sets 
-
-Source columns:  passenger_count
-passenger_count    15715.1
-dtype: float64 
-
-Target columns:  passenger_count
-passenger_count    15716
-dtype: int64 
-
-Dataframe columns DON&#x27;T MATCH
-
- NUMERIC COLUMN Sums Comparison:
-                    self  other
-passenger_count  15715.1  15716
-The list of differences is: 
-
-   passenger_count
-0              0.1
-<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">test_features/2_Raw_to_Clean/test_RawtoClean_sums.py::test_compare_all_column_sums</td>
-          <td class="col-duration">0.33</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">def test_compare_all_column_sums():<br/>&gt;       assert compare_sums_in_any_df(df1, df2) == True<br/><span class="error">E       assert False == True</span><br/><span class="error">E        +  where False = compare_sums_in_any_df(      vendor_id      pickup_datetime  ... total_amount  congestion_surcharge\n0             1   2019-01-15 3:36:12  ......            NaN\n9999          2  2019-01-26 17:48:59  ...        11.80                   0.0\n\n[10000 rows x 18 columns],       vendor_id      pickup_datetime  ... total_amount  congestion_surcharge\n0             1  2019-01-15 03:36:12  ......            NaN\n9999          2  2019-01-26 17:48:59  ...        11.80                   0.0\n\n[10000 rows x 18 columns])</span><br/><br/>test_features\2_Raw_to_Clean\test_RawtoClean_sums.py:25: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/>
+            <div class="log">&gt;   ???<br/><span class="error">E   assert False == True</span><br/><span class="error">E    +  where False = compare_sums_in_any_df(      vendor_id      pickup_datetime  ... total_amount  congestion_surcharge\n0             1   2019-01-15 3:36:12  ......            NaN\n9999          2  2019-01-26 17:48:59  ...        11.80                   0.0\n\n[10000 rows x 18 columns],       vendor_id      pickup_datetime  ... total_amount  congestion_surcharge\n0             1  2019-01-15 03:36:12  ......            NaN\n9999          2  2019-01-26 17:48:59  ...        11.80                   0.0\n\n[10000 rows x 18 columns])</span><br/><br/>C:\Users\dev_BuiacovA\Documents\PythonProjects\GE\test_features\2_Raw_to_Clean\test_RawtoClean_sums.py:25: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/>
  EVERY COLUMN Sums Comparison:
 Dataframe columns DON&#x27;T MATCH
 The list of differences is: 
@@ -482,12 +296,12 @@ dropoff_datetime  2019-01-15 3:42:192019-01-25 18:26:552019-01-0...  2019-01-15 
       <tbody class="failed results-table-row">
         <tr>
           <td class="col-result">Failed</td>
-          <td class="col-name">test_features/3_Clean_to_Curate/test_CleantoCurate_sums.py::test_compare_all_column_sums</td>
-          <td class="col-duration">0.30</td>
+          <td class="col-name">test_features/3. Curate/test_CleantoCurate_sums.py::test_compare_all_column_sums</td>
+          <td class="col-duration">0.24</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">def test_compare_all_column_sums():<br/>&gt;       assert compare_sums_in_any_df(df1, df2) == True<br/><span class="error">E       assert False == True</span><br/><span class="error">E        +  where False = compare_sums_in_any_df(      vendor_id      pickup_datetime  ... total_amount  congestion_surcharge\n0             1  2019-01-15 03:36:12  ......            NaN\n9999          2  2019-01-26 17:48:59  ...        11.80                   0.0\n\n[10000 rows x 18 columns],       vendor_id      pickup_datetime  ... total_amount  congestion_surcharge\n0             1   2019-01-15 3:36:12  ......            NaN\n9999          2  2019-01-26 17:48:59  ...        11.80                   0.0\n\n[10000 rows x 18 columns])</span><br/><br/>test_features\3_Clean_to_Curate\test_CleantoCurate_sums.py:25: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/>
+            <div class="log">&gt;   ???<br/><span class="error">E   assert False == True</span><br/><span class="error">E    +  where False = compare_sums_in_any_df(      vendor_id      pickup_datetime  ... total_amount  congestion_surcharge\n0             1  2019-01-15 03:36:12  ......            NaN\n9999          2  2019-01-26 17:48:59  ...        11.80                   0.0\n\n[10000 rows x 18 columns],       vendor_id      pickup_datetime  ... total_amount  congestion_surcharge\n0             1   2019-01-15 3:36:12  ......            NaN\n9999          2  2019-01-26 17:48:59  ...        11.80                   0.0\n\n[10000 rows x 18 columns])</span><br/><br/>C:\Users\dev_BuiacovA\Documents\PythonProjects\GE\test_features\3_Clean_to_Curate\test_CleantoCurate_sums.py:25: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/>
  EVERY COLUMN Sums Comparison:
 Dataframe columns DON&#x27;T MATCH
 The list of differences is: 
@@ -504,7 +318,7 @@ dropoff_datetime  2019-01-15 03:42:192019-01-25 18:26:552019-01-...  2019-01-15 
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">test_features/1_Source_to_Raw/test_SourcetoRaw_counts.py::test_column_names_count</td>
+          <td class="col-name">test_features/1. Raw/test_SourcetoRaw_counts.py::test_column_names_count</td>
           <td class="col-duration">0.00</td>
           <td class="col-links"></td></tr>
         <tr>
@@ -537,8 +351,8 @@ Dataframe columns MATCH
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">test_features/1_Source_to_Raw/test_SourcetoRaw_counts.py::test_compare_record_count_columns</td>
-          <td class="col-duration">0.03</td>
+          <td class="col-name">test_features/1. Raw/test_SourcetoRaw_counts.py::test_compare_record_count_columns</td>
+          <td class="col-duration">0.01</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -604,7 +418,7 @@ Index: []
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">test_features/1_Source_to_Raw/test_SourcetoRaw_counts.py::test_compare_record_count_raws</td>
+          <td class="col-name">test_features/1. Raw/test_SourcetoRaw_counts.py::test_compare_record_count_raws</td>
           <td class="col-duration">0.03</td>
           <td class="col-links"></td></tr>
         <tr>
@@ -657,192 +471,7 @@ Index: []
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">test_features/1_Source_to_Raw/test_SourcetoRaw_sums.py::test_compare_specific_column_sums[vendor_id-vendor_id]</td>
-          <td class="col-duration">0.01</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
- SPECIFIC COLUMN Sums Comparison:
-Comparing SPECIFIC column sums in 2 data sets 
-
-Source columns:  vendor_id
-vendor_id    16438
-dtype: int64 
-
-Target columns:  vendor_id
-vendor_id    16438
-dtype: int64 
-
-Dataframe columns MATCH
-
- NUMERIC COLUMN Sums Comparison:
-Empty DataFrame
-Columns: [self, other]
-Index: []
-The list of differences is: 
-
-Empty DataFrame
-Columns: [vendor_id]
-Index: []
-<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test_features/2_Raw_to_Clean/test_RawtoClean_counts.py::test_column_names_count</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>Comparing Data
-######################################################################
-Source:  
-
-[&#x27;vendor_id&#x27; &#x27;pickup_datetime&#x27; &#x27;dropoff_datetime&#x27; &#x27;passenger_count&#x27;
- &#x27;trip_distance&#x27; &#x27;rate_code_id&#x27; &#x27;store_and_fwd_flag&#x27; &#x27;pickup_location_id&#x27;
- &#x27;dropoff_location_id&#x27; &#x27;payment_type&#x27; &#x27;fare_amount&#x27; &#x27;extra&#x27; &#x27;mta_tax&#x27;
- &#x27;tip_amount&#x27; &#x27;tolls_amount&#x27; &#x27;improvement_surcharge&#x27; &#x27;total_amount&#x27;
- &#x27;congestion_surcharge&#x27;]
-
-
-######################################################################
-Target:  
-
-[&#x27;vendor_id&#x27; &#x27;pickup_datetime&#x27; &#x27;dropoff_datetime&#x27; &#x27;passenger_count&#x27;
- &#x27;trip_distance&#x27; &#x27;rate_code_id&#x27; &#x27;store_and_fwd_flag&#x27; &#x27;pickup_location_id&#x27;
- &#x27;dropoff_location_id&#x27; &#x27;payment_type&#x27; &#x27;fare_amount&#x27; &#x27;extra&#x27; &#x27;mta_tax&#x27;
- &#x27;tip_amount&#x27; &#x27;tolls_amount&#x27; &#x27;improvement_surcharge&#x27; &#x27;total_amount&#x27;
- &#x27;congestion_surcharge&#x27;]
-
-
-######################################################################
-Dataframe columns MATCH 
-
-<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test_features/2_Raw_to_Clean/test_RawtoClean_counts.py::test_compare_record_count_columns</td>
-          <td class="col-duration">0.02</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>Dataframe column value counts MATCH 
-
-Comparing Data
-######################################################################
-Source:  
-
-vendor_id                10000
-pickup_datetime          10000
-dropoff_datetime         10000
-passenger_count          10000
-trip_distance            10000
-rate_code_id             10000
-store_and_fwd_flag       10000
-pickup_location_id       10000
-dropoff_location_id      10000
-payment_type             10000
-fare_amount              10000
-extra                    10000
-mta_tax                  10000
-tip_amount               10000
-tolls_amount             10000
-improvement_surcharge    10000
-total_amount             10000
-congestion_surcharge      3673
-dtype: int64
-
-
-######################################################################
-Target:  
-
-vendor_id                10000
-pickup_datetime          10000
-dropoff_datetime         10000
-passenger_count          10000
-trip_distance            10000
-rate_code_id             10000
-store_and_fwd_flag       10000
-pickup_location_id       10000
-dropoff_location_id      10000
-payment_type             10000
-fare_amount              10000
-extra                    10000
-mta_tax                  10000
-tip_amount               10000
-tolls_amount             10000
-improvement_surcharge    10000
-total_amount             10000
-congestion_surcharge      3673
-dtype: int64
-
-
-######################################################################
-The list of differences is: 
-
-Series([], dtype: int64)
-Empty DataFrame
-Columns: [self, other]
-Index: []
-<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test_features/2_Raw_to_Clean/test_RawtoClean_counts.py::test_compare_record_count_raws</td>
-          <td class="col-duration">0.01</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>Dataframe row value counts MATCH 
-
-Comparing Data
-######################################################################
-Source:  
-
-0       17
-1       18
-2       17
-3       17
-4       18
-        ..
-9995    17
-9996    17
-9997    17
-9998    17
-9999    18
-Length: 10000, dtype: int64
-
-
-######################################################################
-Target:  
-
-0       17
-1       18
-2       17
-3       17
-4       18
-        ..
-9995    17
-9996    17
-9997    17
-9998    17
-9999    18
-Length: 10000, dtype: int64
-
-
-######################################################################
-The list of differences is: 
-
-Series([], dtype: int64)
-Empty DataFrame
-Columns: [self, other]
-Index: []
-<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test_features/2_Raw_to_Clean/test_RawtoClean_dtypes.py::test_dtypes</td>
+          <td class="col-name">test_features/1. Raw/test_SourcetoRaw_dtypes.py::test_dtypes</td>
           <td class="col-duration">0.01</td>
           <td class="col-links"></td></tr>
         <tr>
@@ -918,8 +547,380 @@ Index: []
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">test_features/2_Raw_to_Clean/test_RawtoClean_sums.py::test_compare_sums_in_numeric_df</td>
-          <td class="col-duration">0.21</td>
+          <td class="col-name">test_features/1. Raw/test_SourcetoRaw_sums.py::test_compare_sums_in_numeric_df</td>
+          <td class="col-duration">0.09</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>Dataframe columns MATCH 
+
+Comparing SUMS of all NUMERIC Columns
+######################################################################
+Source: 
+ vendor_id                  16438.00
+passenger_count            15716.00
+trip_distance              27589.91
+rate_code_id               10623.00
+pickup_location_id       1665286.00
+dropoff_location_id      1635225.00
+payment_type               12930.00
+fare_amount               124850.31
+extra                       3255.09
+mta_tax                     5011.01
+tip_amount                 18139.03
+tolls_amount                2932.42
+improvement_surcharge       2994.90
+total_amount              157242.31
+congestion_surcharge           0.00
+dtype: float64  columns 
+
+Target: 
+ vendor_id                  16438.00
+passenger_count            15716.00
+trip_distance              27589.91
+rate_code_id               10623.00
+pickup_location_id       1665286.00
+dropoff_location_id      1635225.00
+payment_type               12930.00
+fare_amount               124850.31
+extra                       3255.09
+mta_tax                     5011.01
+tip_amount                 18139.03
+tolls_amount                2932.42
+improvement_surcharge       2994.90
+total_amount              157242.31
+congestion_surcharge           0.00
+dtype: float64  columns 
+
+Empty DataFrame
+Columns: [self, other]
+Index: [] 
+
+The list of differences is: 
+
+Empty DataFrame
+Columns: [vendor_id, pickup_datetime, dropoff_datetime, passenger_count, trip_distance, rate_code_id, store_and_fwd_flag, pickup_location_id, dropoff_location_id, payment_type, fare_amount, extra, mta_tax, tip_amount, tolls_amount, improvement_surcharge, total_amount, congestion_surcharge]
+Index: []
+Empty DataFrame
+Columns: []
+Index: []
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_features/1. Raw/test_SourcetoRaw_sums.py::test_compare_all_column_sums</td>
+          <td class="col-duration">0.19</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+ EVERY COLUMN Sums Comparison:
+Dataframe columns MATCH
+The list of differences is: 
+
+Series([], dtype: object)
+Empty DataFrame
+Columns: [self, other]
+Index: []
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_features/1. Raw/test_SourcetoRaw_sums.py::test_compare_specific_column_sums[vendor_id-vendor_id]</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+ SPECIFIC COLUMN Sums Comparison:
+Comparing SPECIFIC column sums in 2 data sets 
+
+Source columns:  vendor_id
+vendor_id    16438
+dtype: int64 
+
+Target columns:  vendor_id
+vendor_id    16438
+dtype: int64 
+
+Dataframe columns MATCH
+
+ NUMERIC COLUMN Sums Comparison:
+Empty DataFrame
+Columns: [self, other]
+Index: []
+The list of differences is: 
+
+Empty DataFrame
+Columns: [vendor_id]
+Index: []
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_features/1. Raw/test_SourcetoRaw_sums.py::test_compare_specific_column_sums[passenger_count-passenger_count]</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+ SPECIFIC COLUMN Sums Comparison:
+Comparing SPECIFIC column sums in 2 data sets 
+
+Source columns:  passenger_count
+passenger_count    15716
+dtype: int64 
+
+Target columns:  passenger_count
+passenger_count    15716
+dtype: int64 
+
+Dataframe columns MATCH
+
+ NUMERIC COLUMN Sums Comparison:
+Empty DataFrame
+Columns: [self, other]
+Index: []
+The list of differences is: 
+
+Empty DataFrame
+Columns: [passenger_count]
+Index: []
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_features/2. Clean/test_RawtoClean_counts.py::test_column_names_count</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>Comparing Data
+######################################################################
+Source:  
+
+[&#x27;vendor_id&#x27; &#x27;pickup_datetime&#x27; &#x27;dropoff_datetime&#x27; &#x27;passenger_count&#x27;
+ &#x27;trip_distance&#x27; &#x27;rate_code_id&#x27; &#x27;store_and_fwd_flag&#x27; &#x27;pickup_location_id&#x27;
+ &#x27;dropoff_location_id&#x27; &#x27;payment_type&#x27; &#x27;fare_amount&#x27; &#x27;extra&#x27; &#x27;mta_tax&#x27;
+ &#x27;tip_amount&#x27; &#x27;tolls_amount&#x27; &#x27;improvement_surcharge&#x27; &#x27;total_amount&#x27;
+ &#x27;congestion_surcharge&#x27;]
+
+
+######################################################################
+Target:  
+
+[&#x27;vendor_id&#x27; &#x27;pickup_datetime&#x27; &#x27;dropoff_datetime&#x27; &#x27;passenger_count&#x27;
+ &#x27;trip_distance&#x27; &#x27;rate_code_id&#x27; &#x27;store_and_fwd_flag&#x27; &#x27;pickup_location_id&#x27;
+ &#x27;dropoff_location_id&#x27; &#x27;payment_type&#x27; &#x27;fare_amount&#x27; &#x27;extra&#x27; &#x27;mta_tax&#x27;
+ &#x27;tip_amount&#x27; &#x27;tolls_amount&#x27; &#x27;improvement_surcharge&#x27; &#x27;total_amount&#x27;
+ &#x27;congestion_surcharge&#x27;]
+
+
+######################################################################
+Dataframe columns MATCH 
+
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_features/2. Clean/test_RawtoClean_counts.py::test_compare_record_count_columns</td>
+          <td class="col-duration">0.02</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>Dataframe column value counts MATCH 
+
+Comparing Data
+######################################################################
+Source:  
+
+vendor_id                10000
+pickup_datetime          10000
+dropoff_datetime         10000
+passenger_count          10000
+trip_distance            10000
+rate_code_id             10000
+store_and_fwd_flag       10000
+pickup_location_id       10000
+dropoff_location_id      10000
+payment_type             10000
+fare_amount              10000
+extra                    10000
+mta_tax                  10000
+tip_amount               10000
+tolls_amount             10000
+improvement_surcharge    10000
+total_amount             10000
+congestion_surcharge      3673
+dtype: int64
+
+
+######################################################################
+Target:  
+
+vendor_id                10000
+pickup_datetime          10000
+dropoff_datetime         10000
+passenger_count          10000
+trip_distance            10000
+rate_code_id             10000
+store_and_fwd_flag       10000
+pickup_location_id       10000
+dropoff_location_id      10000
+payment_type             10000
+fare_amount              10000
+extra                    10000
+mta_tax                  10000
+tip_amount               10000
+tolls_amount             10000
+improvement_surcharge    10000
+total_amount             10000
+congestion_surcharge      3673
+dtype: int64
+
+
+######################################################################
+The list of differences is: 
+
+Series([], dtype: int64)
+Empty DataFrame
+Columns: [self, other]
+Index: []
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_features/2. Clean/test_RawtoClean_counts.py::test_compare_record_count_raws</td>
+          <td class="col-duration">0.02</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>Dataframe row value counts MATCH 
+
+Comparing Data
+######################################################################
+Source:  
+
+0       17
+1       18
+2       17
+3       17
+4       18
+        ..
+9995    17
+9996    17
+9997    17
+9998    17
+9999    18
+Length: 10000, dtype: int64
+
+
+######################################################################
+Target:  
+
+0       17
+1       18
+2       17
+3       17
+4       18
+        ..
+9995    17
+9996    17
+9997    17
+9998    17
+9999    18
+Length: 10000, dtype: int64
+
+
+######################################################################
+The list of differences is: 
+
+Series([], dtype: int64)
+Empty DataFrame
+Columns: [self, other]
+Index: []
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_features/2. Clean/test_RawtoClean_dtypes.py::test_dtypes</td>
+          <td class="col-duration">0.02</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>Comparing Data Types
+######################################################################
+Dataframe Data Types MATCH 
+
+Comparing Data
+######################################################################
+Source:  
+
+vendor_id                  int64
+pickup_datetime           object
+dropoff_datetime          object
+passenger_count            int64
+trip_distance            float64
+rate_code_id               int64
+store_and_fwd_flag        object
+pickup_location_id         int64
+dropoff_location_id        int64
+payment_type               int64
+fare_amount              float64
+extra                    float64
+mta_tax                  float64
+tip_amount               float64
+tolls_amount             float64
+improvement_surcharge    float64
+total_amount             float64
+congestion_surcharge     float64
+dtype: object
+
+
+######################################################################
+Target:  
+
+vendor_id                  int64
+pickup_datetime           object
+dropoff_datetime          object
+passenger_count            int64
+trip_distance            float64
+rate_code_id               int64
+store_and_fwd_flag        object
+pickup_location_id         int64
+dropoff_location_id        int64
+payment_type               int64
+fare_amount              float64
+extra                    float64
+mta_tax                  float64
+tip_amount               float64
+tolls_amount             float64
+improvement_surcharge    float64
+total_amount             float64
+congestion_surcharge     float64
+dtype: object
+
+
+######################################################################
+
+ Data Type Differences:
+Empty DataFrame
+Columns: [self, other]
+Index: []
+The list of differences is: 
+
+Empty DataFrame
+Columns: [0]
+Index: []
+Empty DataFrame
+Columns: []
+Index: []
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_features/2. Clean/test_RawtoClean_sums.py::test_compare_sums_in_numeric_df</td>
+          <td class="col-duration">0.14</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -1002,7 +1003,7 @@ The list of differences is:
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">test_features/2_Raw_to_Clean/test_RawtoClean_sums.py::test_compare_specific_column_sums[vendor_id-vendor_id]</td>
+          <td class="col-name">test_features/2. Clean/test_RawtoClean_sums.py::test_compare_specific_column_sums[vendor_id-vendor_id]</td>
           <td class="col-duration">0.00</td>
           <td class="col-links"></td></tr>
         <tr>
@@ -1034,7 +1035,7 @@ Index: []
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">test_features/3_Clean_to_Curate/test_CleantoCurate_counts.py::test_column_names_count</td>
+          <td class="col-name">test_features/3. Curate/test_CleantoCurate_counts.py::test_column_names_count</td>
           <td class="col-duration">0.00</td>
           <td class="col-links"></td></tr>
         <tr>
@@ -1067,7 +1068,7 @@ Dataframe columns MATCH
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">test_features/3_Clean_to_Curate/test_CleantoCurate_counts.py::test_compare_record_count_columns</td>
+          <td class="col-name">test_features/3. Curate/test_CleantoCurate_counts.py::test_compare_record_count_columns</td>
           <td class="col-duration">0.01</td>
           <td class="col-links"></td></tr>
         <tr>
@@ -1134,8 +1135,8 @@ Index: []
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">test_features/3_Clean_to_Curate/test_CleantoCurate_counts.py::test_compare_record_count_raws</td>
-          <td class="col-duration">0.04</td>
+          <td class="col-name">test_features/3. Curate/test_CleantoCurate_counts.py::test_compare_record_count_raws</td>
+          <td class="col-duration">0.03</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -1187,8 +1188,8 @@ Index: []
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">test_features/3_Clean_to_Curate/test_CleantoCurate_dtypes.py::test_dtypes</td>
-          <td class="col-duration">0.01</td>
+          <td class="col-name">test_features/3. Curate/test_CleantoCurate_dtypes.py::test_dtypes</td>
+          <td class="col-duration">0.02</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -1263,8 +1264,8 @@ Index: []
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">test_features/3_Clean_to_Curate/test_CleantoCurate_sums.py::test_compare_sums_in_numeric_df</td>
-          <td class="col-duration">0.23</td>
+          <td class="col-name">test_features/3. Curate/test_CleantoCurate_sums.py::test_compare_sums_in_numeric_df</td>
+          <td class="col-duration">0.17</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -1347,7 +1348,7 @@ The list of differences is:
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">test_features/3_Clean_to_Curate/test_CleantoCurate_sums.py::test_compare_specific_column_sums[vendor_id-vendor_id]</td>
+          <td class="col-name">test_features/3. Curate/test_CleantoCurate_sums.py::test_compare_specific_column_sums[vendor_id-vendor_id]</td>
           <td class="col-duration">0.00</td>
           <td class="col-links"></td></tr>
         <tr>
